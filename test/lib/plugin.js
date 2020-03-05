@@ -2,7 +2,7 @@
 'use strict'
 
 const assert = require('assert')
-const WDPlugin = require('../lib/plugin')
+const WDPlugin = require('../../lib/plugin')
 
 describe('watchdog plugin', () => {
   it('initializes', () => {

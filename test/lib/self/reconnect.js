@@ -7,7 +7,7 @@ const _isArray = require('lodash/isArray')
 const _isObject = require('lodash/isObject')
 const { EventEmitter } = require('events')
 
-const onSelfReconnect = require('../../lib/self/reconnect')
+const onSelfReconnect = require('../../../lib/self/reconnect')
 
 describe('self:reconnect', () => {
   it('clears timeout and reconnects if socket is closed', (done) => {

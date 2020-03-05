@@ -2,7 +2,9 @@
 'use strict'
 
 const assert = require('assert')
-const onWSClose = require('../../lib/ws/close')
+const _isEmpty = require('lodash/isEmpty')
+const _isObject = require('lodash/isObject')
+const onWSClose = require('../../../lib/ws/close')
 
 describe('ws:close', () => {
   it('does nothing if autoReconnect is not enabled', () => {
@@ -11,7 +13,9 @@ describe('ws:close', () => {
     })
 
     const res = handler()
-    assert.strictEqual(res, null)
+
+    assert.strictEqual(res[0], null)
+    assert.ok(_isObject(res[1]) && _isEmpty(res[1]))
   })
 
   it('emits reconnect event on a timeout if autoReconnect is enabled', (done) => {
